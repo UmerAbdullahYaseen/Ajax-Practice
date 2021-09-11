@@ -16,7 +16,6 @@ class FullPost extends Component {
                 </div>
     
             );
-
         }
         
         return post;
