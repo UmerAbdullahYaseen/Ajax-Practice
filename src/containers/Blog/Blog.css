@@ -5,3 +5,33 @@
     width: 80%;
     margin: auto;
 }
+
+.Postss ul {
+
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+
+} 
+
+.Postss li {
+
+    display: inline-block;
+    margin: 20px;
+
+}
+.Postss a {
+
+    text-decoration: none;
+    color: black;
+    
+}
+
+.Postss a:hover,
+.Postss a:active {
+         
+        color: rgb(3, 194, 194);
+}
