@@ -3,7 +3,6 @@ import axios from '../../../axios';
 import Post from '../../../components/Post/Post';
 import './Posts.css';
 
-
 class Posts extends Component {
     state={
         posts: [],
@@ -13,7 +12,7 @@ class Posts extends Component {
 
     postSelectedHandler = (id) => {
 
-        this.setState({selectedPostid: id})  
+        this.props.history.push('/' + id);
 
 }
 
@@ -50,13 +49,17 @@ componentDidMount() {
         if (!this.state.error) {
             posts = this.state.posts.map(post => {
 
-                return <Post 
-                key={ post.id  } 
+                return (
+               
+                <Post 
+                
+                key={ post.id  }
                 title={post.title} 
                 author={post.author}
                 clicked ={() =>this.postSelectedHandler(post.id)}
                 
-                />;
+                />     
+                );
     
             })  
 
