@@ -8,6 +8,9 @@ import NewPost from './NewPost/NewPost';
 
 
 class Blog extends Component {
+    state = {
+        auth: true
+    }
 
     render () {
 
@@ -15,7 +18,7 @@ class Blog extends Component {
             <div className="Postss" >
 
                 <header>
-                    <nav>
+                     <nav>
                         <ul>
                             <li><NavLink to="/posts/" exact
                             activeClassName="my-active"
@@ -53,12 +56,13 @@ class Blog extends Component {
                 </section> */}
                 <Switch>
                 
-                <Route path="/new-post" exact component={NewPost} />
-                <Route path="/posts/" component={Posts} />
-                {/* <Route path="/" component={Posts} /> */}
-                <Redirect from="/" to="/posts/" />
-                </Switch>
-
+                {this.state.auth ? <Route path="/new-post" exact component={NewPost} /> :null}
+                <Route path="/posts" component={Posts} />
+                <Route render={()=> <h1>Not Found :( </h1> }  />
+                {/* <Route path="/" component={Posts} /> */} 
+                {/* <Redirect from="/" to="/posts/" />   */}
+                </Switch>   
+ 
             </div>
         );
     }
